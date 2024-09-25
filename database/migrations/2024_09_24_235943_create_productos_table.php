@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('Nombre');
             $table->string('slug');
-            $table->string('Descripcion');
+            $table->text('Descripcion');
             $table->integer('Cantidad');
-            $table->integer('Precio');
+            $table->double('Precio',10,2);
             $table->unsignedBigInteger('id_category');
             $table->foreign('id_category')->references('id')->on('Categorias')->onDelete('cascade');
             $table->timestamps();

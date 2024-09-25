@@ -18,13 +18,13 @@ class ProductosFactory extends Factory
      */
     public function definition(): array
     {
-        $text=$this->faker->unique->word();
+        $text=$this->faker->unique->sentence();
         return [
             'Nombre'=>$text,
             'slug'=>Str::slug($text),
             'Descripcion'=>$this->faker->paragraph(),
             'Cantidad'=>$this->faker->numberBetween(5,50),
-            'Precio'=>$this->faker->randomFloat(10,100),
+            'Precio'=>$this->faker->randomFloat(2,10,500),
             'id_category'=>Categorias::all()->random()->id,
         ];
     }
